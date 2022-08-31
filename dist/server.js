@@ -1,11 +1,1 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const server = (0, express_1.default)();
-server.get('/', (req, res) => {
-    return res.send('hello universe');
-});
-server.listen(3000, () => console.log('server running'));
+(()=>{"use strict";var e={853:function(e,r,t){var s=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(r,"__esModule",{value:!0});const o=(0,s(t(860)).default)();o.get("/",((e,r)=>r.send("hello universe"))),o.listen(3e3,(()=>console.log("server running")))},860:e=>{e.exports=require("express")}},r={};!function t(s){var o=r[s];if(void 0!==o)return o.exports;var n=r[s]={exports:{}};return e[s].call(n.exports,n,n.exports,t),n.exports}(853)})();
