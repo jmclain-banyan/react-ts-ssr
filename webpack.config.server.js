@@ -1,5 +1,6 @@
 const nodeExternals = require("webpack-node-externals");
 const path = require("path");
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   name: "server",
@@ -28,6 +29,15 @@ module.exports = {
           configFile: "tsconfig.server.json",
         },
       },
+      {
+        test: /\.css?$/,
+        use: 'css-loader'
+      }
     ],
   },
+  plugins: [
+    new CopyPlugin({
+      patterns: [{ context: 'server', from: 'views', to: 'views' }],
+    }),
+  ],
 };
