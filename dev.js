@@ -25,8 +25,9 @@ let node
 
 compiler.hooks.watchRun.tap('Dev', (compiler) => {
   console.log(`Compiling ${compiler.name} ...`)
+  console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', node)
   if (compiler.name === 'server' && node) {
-    node.kill()
+    node.killed = true
     node = undefined
   }
 })
