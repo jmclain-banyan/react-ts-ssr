@@ -1,10 +1,19 @@
-# Getting Started with Create React App
+# Typescript CRA migarated to SSR via Express and Webpack
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
+## NOTE
+
+This project does have to base scripts from `create react-app` in addition there are server side rendering scripts as follows
+
 In the project directory, you can run:
+
+### `yarn start:dev`
+
+Runs the app in development mode, implement server side rendering using webpack.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `yarn start`
 
