@@ -26,9 +26,12 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:server": "webpack --config webpack.config.server.js",
-    "start:server": "node ./dist/server.js",
     "build:client": "webpack --config webpack.config.client.js",
-    "start:dev": "node dev.js"
+    "start:server": "node ./dist/server.js",
+    "start:dev": "node dev.js",
+    "dev:build:server": "webpack --config webpack.config.server.js --watch",
+    "dev:build:client": "webpack --config webpack.config.client.js --watch",
+    "dev:start": "nodemon --watch dist --exe \"nodemon ./dist/server.js\""
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +59,7 @@
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
+    "nodemon": "^2.0.19",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.1",
     "webpack": "^5.74.0",
