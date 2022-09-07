@@ -16,7 +16,7 @@ const App: React.FC = () => {
       <div className="App">
         <header className="App-header">
           <button onClick={increment}>+</button>
-          <span>the count is {count}</span>
+          <span>the count is{count}</span>
           <button onClick={decrement}>-</button>
         </header>
       </div>
