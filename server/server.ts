@@ -1,11 +1,7 @@
 import express from "express";
 import fs from "fs";
 import path from "path";
-// import React from "react";
-// import ReactDOMServer from "react-dom/server";
-// import { StaticRouter } from 'react-router-dom/server';
-// import App from "../src/App";
-// import Routes from '../src/Routes';
+import { generateReduxSsrStore } from "../helpers/ssrStore";
 import ClientContent from "../helpers/ClientContent";
 
 const server = express();
@@ -22,7 +18,8 @@ const manifest = fs.readFileSync(
 const assets = JSON.parse(manifest);
 
 server.get('*', (req, res) => {
-    const component = ClientContent(req)
+    const reduxStore = generateReduxSsrStore()
+    const component = ClientContent(req, reduxStore)
     res.render('client', { assets, component})
   })
 

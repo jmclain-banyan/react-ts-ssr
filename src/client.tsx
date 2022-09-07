@@ -1,13 +1,18 @@
-// import React from 'react';
 import ReactDOM from "react-dom";
-// import App from './App';
-import Routes from "./Routes";
 import { BrowserRouter } from "react-router-dom";
+import { generateReduxSsrStore } from "./redux/store";
+import { Provider } from "react-redux";
+
+import Routes from "./Routes";
 import "./index.css";
 
+const store = generateReduxSsrStore();
+
 ReactDOM.hydrate(
-  <BrowserRouter>
-    <Routes />
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("root")
 );
